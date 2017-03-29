@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Cursos</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+<body onload="exibirCursos()" >
+ <header>
+ <p>Bem-vindo, <%- usuario.nome %></p>
+ <h1>Cadastro de Cursos</h1>
+ <h4>Forneça os dados do curso para cadastro</h4>
+ </header>
+ <section>
+ <form action="/novoCurso" method="post">
+ Codigo: <br /><input type="text" name="curso[codigo]"
+ placeholder="Codigo">
+ <br>
+ Descricao: <br/><input type="text" name="curso[descricao]"
+ placeholder="Descricao">
+ <br>
+ CH: <br/><input type="text" name="curso[ch]"
+ placeholder="Ch">
+ <br>
+ Categoria: <br/><select id="categoria" name="curso[categoria]"></select>
+ <br>
+ <button type="submit">Cadastrar</button>
+ </form>
+ </section>
+ <footer>
+ <small>Sistema de Cadastro e Listagem de Cursos</small>
+ </footer>
+
+  <script>
+    /* Carregando a combobox*/
+ 
+function exibirCursos () {
+    var comboCidades = document.getElementById("categoria");
+
+    var opt0 = document.createElement("option");
+    opt0.value = "0";
+    opt0.text = "";
+    categoria.add(opt0, categoria.options[0]);
+
+    var opt1 = document.createElement("option");
+    opt1.value = "1";
+    opt1.text = "Desenvolvimento";
+    categoria.add(opt1, categoria.options[1]);
+
+    var opt2 = document.createElement("option");
+    opt2.value = "2";
+    opt2.text = "Arquitetura Java";
+    categoria.add(opt2, categoria.options[2]);
+
+    var opt3 = document.createElement("option");
+    opt3.value = "3";
+    opt3.text = "Arquitetura .NET";
+    categoria.add(opt3, categoria.options[3]);
+
+    var opt4 = document.createElement("option");
+    opt4.value = "4";
+    opt4.text = "Projetos Integrados";
+    categoria.add(opt4, categoria.options[4]);
+
+    var opt5 = document.createElement("option");
+    opt5.value = "5";
+    opt5.text = "Gestão de Processos";
+    categoria.add(opt5, categoria.options[5]);
+
+    var opt6 = document.createElement("option");
+    opt6.value = "6";
+    opt6.text = "Compiladores";
+    categoria.add(opt6, categoria.options[6]);
+
+
+};
+  </script>
+</body>
+</html>
